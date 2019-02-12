@@ -3,6 +3,7 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
+      <input type="checkbox" <% if task.completed == true %> checked <% end %>>
       <%= link_to task.title, task %>
       <%= link_to "Delete", task_path(task),
       method: :delete,
